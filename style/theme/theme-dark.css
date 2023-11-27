@@ -1,0 +1,21 @@
+/*# sourceMappingURL=./theme-dark.css.map */
+
+.theme-background-header {
+    background-color: rgb(71, 74, 81);
+}
+
+.theme-background-main {
+    background-color: rgb(71, 74, 81);
+}
+
+.theme-color {
+    color: white;
+}
+
+.theme-color-yell {
+    color: black;
+}
+
+.theme-icon {
+    background-image: url('../../img/theme/sun-black.svg');
+}
