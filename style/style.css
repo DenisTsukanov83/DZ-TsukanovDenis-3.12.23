@@ -35,10 +35,45 @@
   font-family: 'Anglecia';
   src: url('../fonts/Mint\ Type\ -\ Anglecia\ Pro\ Title\ Regular.woff') format('woff'), url('../fonts/Mint\ Type\ -\ Anglecia\ Pro\ Title\ Regular.woff2') format('woff2');
 }
+.theme-background-header-dark {
+  background-color: #474a51;
+}
+.theme-background-main-dark {
+  background-color: #474a51;
+}
+.theme-color-dark {
+  color: white;
+}
+.theme-color-yell-dark {
+  color: black;
+}
+.theme-background-header-light {
+  background-color: white;
+}
+.theme-background-main-light {
+  background-color: #dddddd;
+}
+.theme-color-light {
+  color: black;
+}
+.theme-color-yell-light {
+  color: white;
+}
+.theme-moon-black {
+  background-image: url(../img/theme/moon-black.svg);
+}
+.theme-moon-white {
+  background-image: url(../img/theme/moon-white.svg);
+}
+.theme-sun-black {
+  background-image: url(../img/theme/sun-black.svg);
+}
+.theme-sun-white {
+  background-image: url(../img/theme/sun-white.svg);
+}
 .header {
   width: 100%;
   height: calc((730 / 16) * 1rem);
-  background-color: #474a51;
   box-shadow: calc((-1 / 16) * 1rem) calc((7 / 16) * 1rem) calc((14 / 16) * 1rem) calc((7 / 16) * 1rem) black;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -94,7 +129,6 @@
 .header button {
   font-family: 'Catamaran';
   font-weight: bold;
-  color: black;
   text-transform: uppercase;
   font-size: calc((18 / 16) * 1rem);
   padding: calc((10 / 16) * 1rem) calc((10 / 16) * 1rem) calc((8 / 16) * 1rem) calc((10 / 16) * 1rem);
@@ -627,7 +661,6 @@
   padding: calc((0 / 16) * 1rem) calc((10 / 16) * 1rem) calc((0 / 16) * 1rem) calc((10 / 16) * 1rem);
   background-color: #ffba31;
   width: max-content;
-  color: white;
 }
 .resume-item-subtitle {
   font-size: calc((19 / 16) * 1rem);
@@ -705,7 +738,6 @@
   display: none;
   width: 100%;
   padding: calc((65 / 16) * 1rem) calc((100 / 16) * 1rem) calc((0 / 16) * 1rem) calc((85 / 16) * 1rem);
-  background-color: #474a51;
 }
 .testimon-title {
   width: 100%;
@@ -830,7 +862,6 @@
   display: none;
   width: 100%;
   padding: calc((65 / 16) * 1rem) calc((100 / 16) * 1rem) calc((0 / 16) * 1rem) calc((85 / 16) * 1rem);
-  background-color: #474a51;
 }
 .contact-title {
   width: 100%;
@@ -903,7 +934,6 @@
   display: none;
   width: 100%;
   padding: calc((65 / 16) * 1rem) calc((100 / 16) * 1rem) calc((0 / 16) * 1rem) calc((85 / 16) * 1rem);
-  background-color: #474a51;
 }
 .portfolio-title {
   width: 100%;
@@ -1071,12 +1101,6 @@
   height: calc((20 / 16) * 1rem);
   background-size: cover;
 }
-.aside-menu-item-0-moon {
-  background-image: url(../img/theme/moon-black.svg);
-}
-.aside-menu-item-0-sun {
-  background-image: url(../img/theme/sun-black.svg);
-}
 .aside-menu-item-1 {
   background-image: url(../img/aside-menu/home-black.svg);
 }
@@ -1098,12 +1122,6 @@
 .aside-menu-devider {
   height: calc((15 / 16) * 1rem);
   border-left: calc((3 / 16) * 1rem) dotted black;
-}
-.theme-sun-white {
-  background-image: url('../img/theme/sun-white.svg');
-}
-.theme-moon-white {
-  background-image: url('../img/theme/moon-white.svg');
 }
 @media screen and (max-width: 600px) {
   .aside-menu {

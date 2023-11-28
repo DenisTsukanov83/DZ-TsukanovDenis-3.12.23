@@ -75,26 +75,35 @@ $(document).ready(function () {
         if (!$(e.target).hasClass('active') && !$(e.target).hasClass('aside-menu-item-0')) {
             changeBg($(e.target), 'white');
         } else {
-            if($(e.target).css('background-image').match(/sun/)) {
-                $(e.target).addClass('theme-sun-white');
-                $(e.target).removeClass('theme-icon');
-            } else if($(e.target).css('background-image').match(/moon/)) {
-                $(e.target).addClass('theme-moon-white');
-                $(e.target).removeClass('theme-icon');
+            if($(e.target).hasClass('theme-moon-black')) {
+                addRemoveClass($(e.target), 'theme-moon-black', 'theme-moon-white');
+            } else if($(e.target).hasClass('theme-sun-black')) {
+                addRemoveClass($(e.target), 'theme-sun-black', 'theme-sun-white');
             }
+            $(e.target).off('click');
+            $(e.target).click((e) => {
+                console.log(true)
+                e.preventDefault();
+                if($(e.target).hasClass('theme-moon-white')) {
+                    addRemoveClass($(e.target), 'theme-moon-white', 'theme-sun-white');
+                } else if($(e.target).hasClass('theme-sun-white')) {
+                    addRemoveClass($(e.target), 'theme-sun-white', 'theme-moon-white');
+                }
+                applyTheme($('.aside-menu-item-0').data('theme'));
+                
+            });
         }
     });
     $('.aside-menu-item').mouseleave((e) => {
         if (!$(e.target).hasClass('active') && !$(e.target).hasClass('aside-menu-item-0')) {
             changeBg($(e.target), 'black');
         } else {
-            if($(e.target).css('background-image').match(/sun/)) {
-                $(e.target).removeClass('theme-sun-white');
-                $(e.target).addClass('theme-icon');
-            } else if($(e.target).css('background-image').match(/moon/)) {
-                $(e.target).removeClass('theme-moon-white');
-                $(e.target).addClass('theme-icon');
+            if($(e.target).hasClass('theme-moon-white')) {
+                addRemoveClass($(e.target), 'theme-moon-white', 'theme-moon-black');
+            } else if($(e.target).hasClass('theme-sun-white')) {
+                addRemoveClass($(e.target), 'theme-sun-white', 'theme-sun-black');
             }
+            
         }
     });
 
@@ -112,32 +121,44 @@ $(document).ready(function () {
         }
     }
 
+    function addRemoveClass(el, remove, add) {
+        el.removeClass(remove).addClass(add);
+    }
+
     function applyTheme(theme) {
         if(theme == 'dark') {
-            $('[title="theme"]').attr('href', '../style/theme/theme-dark.css');
             changeIcons($('.about-do-img img'), 'white');
             changeIcons($('.contact-item-img img'), 'white');
+            addRemoveClass($('.theme-background-header-light'), 'theme-background-header-light', 'theme-background-header-dark');
+            addRemoveClass($('.theme-background-main-light'), 'theme-background-main-light', 'theme-background-main-dark');
+            addRemoveClass($('.theme-color-light'), 'theme-color-light', 'theme-color-dark');
+            addRemoveClass($('.theme-color-yell-light'), 'theme-color-yell-light', 'theme-color-yell-dark');
+            addRemoveClass($('.theme-moon-black'), 'theme-moon-black', 'theme-sun-black');
             $('.aside-menu-item-0').data('theme', 'light');
 
         } 
         if(theme == 'light') {
-            $('[title="theme"]').attr('href', '../style/theme/theme-light.css');
             changeIcons($('.about-do-img img'), 'black');
             changeIcons($('.contact-item-img img'), 'black');
+            addRemoveClass($('.theme-background-header-dark'), 'theme-background-header-dark', 'theme-background-header-light');
+            addRemoveClass($('.theme-background-main-dark'), 'theme-background-main-dark', 'theme-background-main-light');
+            addRemoveClass($('.theme-color-dark'), 'theme-color-dark', 'theme-color-light');
+            addRemoveClass($('.theme-color-yell-dark'), 'theme-color-yell-dark', 'theme-color-yell-light');
+            addRemoveClass($('.theme-sun-black'), 'theme-sun-black', 'theme-moon-black');
             $('.aside-menu-item-0').data('theme', 'dark');
         }
 
         localStorage.setItem('theme', theme);
     }
-    $('.aside-menu-item-0').click((e) => {
+    /* $('.aside-menu-item-0').click((e) => {
         e.preventDefault();
         applyTheme($('.aside-menu-item-0').data('theme'));
         
-    });
+    }); */
 
-    if(localStorage.getItem('theme') != null) {
+    /* if(localStorage.getItem('theme') != null) {
         applyTheme(localStorage.getItem('theme'));
-    }
+    } */
 
     // Переключение Portfolio
     $('.portfolio-nav ul li a').click((e) => {
