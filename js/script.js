@@ -80,9 +80,8 @@ $(document).ready(function () {
             } else if($(e.target).hasClass('theme-sun-black')) {
                 addRemoveClass($(e.target), 'theme-sun-black', 'theme-sun-white');
             }
-            $(e.target).off('click');
-            $(e.target).click((e) => {
-                console.log(true)
+            $('.aside-menu-item-0').off('click');
+            $('.aside-menu-item-0').click((e) => {
                 e.preventDefault();
                 if($(e.target).hasClass('theme-moon-white')) {
                     addRemoveClass($(e.target), 'theme-moon-white', 'theme-sun-white');
